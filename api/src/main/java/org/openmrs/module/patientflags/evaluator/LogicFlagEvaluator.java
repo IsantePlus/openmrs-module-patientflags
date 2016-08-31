@@ -136,7 +136,7 @@ public class LogicFlagEvaluator implements FlagEvaluator {
 		return new FlagValidationResult(true); */
 	}
 	
-	@Override
+
 	public String evalMessage(Flag flag, int patientId) {
 		return flag.getMessage();
 	}

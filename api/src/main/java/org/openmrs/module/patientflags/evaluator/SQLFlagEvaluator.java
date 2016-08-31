@@ -134,7 +134,7 @@ public class SQLFlagEvaluator implements FlagEvaluator {
 		return new FlagValidationResult(true);
 	}
 
-	@Override
+
 	public String evalMessage(Flag flag, int patientId) {
 		String literal = "\\$\\{\\d{1,2}\\}";
 		String message = flag.getMessage();

@@ -113,7 +113,6 @@ public class GroovyFlagEvaluator implements FlagEvaluator {
 		}
 	}
 
-	@Override
 	public String evalMessage(Flag flag, int patientId) {
 		return flag.getMessage();
 	}
