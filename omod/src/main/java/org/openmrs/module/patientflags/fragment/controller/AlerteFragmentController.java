@@ -18,8 +18,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.openmrs.Patient;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Flag;
@@ -40,14 +38,15 @@ public class AlerteFragmentController {
 	 */
 	//(unable to map this controller via annotation since we need to override Openmrs core portlet mapping
 	//@RequestMapping(method = RequestMethod.GET)
-	public void controller(HttpServletRequest request, Map<String, Object> model,  @RequestParam("patientId") Patient patient) {
-		Integer patientID = (Integer) patient.getPatientId();
+	public void controller(Map<String, Object> model,  @RequestParam("patientId") Patient patient) {
+		Integer patientID =  patient.getPatientId();
 		//Patient patient = Context.getPatientService().getPatient(patientID);
+		
 		
 		List<Flag> results = new ArrayList<Flag>();
 		FlagService flagService = Context.getService(FlagService.class);
 		
-		results = flagService.generateFlagsForPatient(patient, Context.getAuthenticatedUser().getAllRoles(), "Patient Dashboard Overview");
+		results = flagService.generateFlagsForPatient(patient);
 		
 		List<Map<String, Object>> fgl = new ArrayList<Map<String, Object>>();
 		for (Flag flag : results) {
@@ -55,10 +54,11 @@ public class AlerteFragmentController {
 
 			mapFp.put("flag", flag);
 			mapFp.put("flagMessage", flag.evalMessage(patientID));
+			System.out.println(">>>>>>>>>>>>>>>>>>>>this is a test");
 			
 			fgl.add(mapFp);
 		}
-		
+		if(fgl.size()>0)
 		model.put("flaglist", fgl);
 	}
 }
