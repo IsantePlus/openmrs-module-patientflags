@@ -27,7 +27,10 @@
 			<artifactId>openmrs-web</artifactId>
 			<type>jar</type>
 		</dependency>
-		
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>uiframework-api</artifactId>
+		</dependency>
 		<!-- dependencies required for testing -->
 		<dependency>
 			<groupId>cglib</groupId>

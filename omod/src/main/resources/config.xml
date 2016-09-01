@@ -9,7 +9,12 @@
 	<author>Mark Goodrich</author>
 	<description>Adds the ability to flag patient records</description>
 	<activator>@MODULE_PACKAGE@.PatientFlagsModuleActivator</activator>
-     <require_version>1.11.5</require_version> 
+     <require_version>${openMRSVersion}</require_version> 
+     <require_modules>
+    <require_module>
+        org.openmrs.module.uiframework
+    </require_module>
+</require_modules>
 	<!-- /Patient Flags Module Properties -->
 	
 	<!-- Required Modules -->

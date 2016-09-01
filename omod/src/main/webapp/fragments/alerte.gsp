@@ -4,8 +4,8 @@
     </div>
     
     <div class="info-body">
-    <g:each var="fm" in="${model.flaglist}">
-        <span ${fm.flag.priority.style}>${fm.flagMessage}</span><br />
-    </g:each>
+    <% flaglist.each {%>
+            <span ${ui.format(it.flag.priority.style)}>${ui.format(it.flagMessage)}</span><br />
+    <% } %>
     </div>
 </div>

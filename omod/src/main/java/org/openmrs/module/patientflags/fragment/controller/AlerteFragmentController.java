@@ -22,7 +22,9 @@ import org.openmrs.Patient;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.api.FlagService;
+import org.openmrs.ui.framework.fragment.FragmentModel;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 /**
  * Controller that injects a Patient Flags into a box in the Overview section of the Patient
@@ -38,11 +40,11 @@ public class AlerteFragmentController {
 	 */
 	//(unable to map this controller via annotation since we need to override Openmrs core portlet mapping
 	//@RequestMapping(method = RequestMethod.GET)
-	public void controller(Map<String, Object> model,  @RequestParam("patientId") Patient patient) {
-		Integer patientID =  patient.getPatientId();
+	public void controller(FragmentModel model,Map<String, Object> model1,  @RequestParam("patientId") Patient patient) {
+			Integer patientID =  patient.getPatientId();
 		//Patient patient = Context.getPatientService().getPatient(patientID);
 		
-		
+		model1 = new HashMap<String, Object>();
 		List<Flag> results = new ArrayList<Flag>();
 		FlagService flagService = Context.getService(FlagService.class);
 		
@@ -54,11 +56,11 @@ public class AlerteFragmentController {
 
 			mapFp.put("flag", flag);
 			mapFp.put("flagMessage", flag.evalMessage(patientID));
-			System.out.println(">>>>>>>>>>>>>>>>>>>>this is a test");
 			
 			fgl.add(mapFp);
 		}
 		if(fgl.size()>0)
-		model.put("flaglist", fgl);
+		model1.put("flaglist", fgl);
+		model.addAttribute("flaglist", fgl);
 	}
 }

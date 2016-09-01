@@ -36,7 +36,7 @@
 
 <!-- default property values, required for eclipse build path configuration -->
 	<properties>
-		<openMRSVersion>1.11.5</openMRSVersion>
+		<openMRSVersion>1.11.0</openMRSVersion>
 		<openMRSMinorVersion>1.11</openMRSMinorVersion>
 		<logicVersion>0.5</logicVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,7 +45,7 @@
 		<coreappsVersion>1.6</coreappsVersion>
 		<appuiVersion>1.3</appuiVersion>
 		<appframeworkVersion>2.3</appframeworkVersion>
-		<uiframeworkVersion>3.2</uiframeworkVersion>
+		<uiframeworkVersion>3.6</uiframeworkVersion>
 	</properties>
 
 	<dependencyManagement>
@@ -317,10 +317,10 @@
 		</profile>
 		
 		<profile>
-			<id>openmrs-1.11.5-a0c979</id>
+			<id>openmrs-1.11.5</id>
 		    
 		    <properties>
-				<openMRSVersion>1.11.5-a0c979</openMRSVersion>
+				<openMRSVersion>1.11.5</openMRSVersion>
 				<openMRSMinorVersion>1.11</openMRSMinorVersion>
 				<logicVersion>0.5</logicVersion>
 			</properties>

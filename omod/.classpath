@@ -33,16 +33,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="src" path="/openmrs-api"/>
-	<classpathentry kind="lib" path="C:/Users/maxy/.m2/repository/org/openmrs/module/uiframework-api/3.0/uiframework-api-3.0.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.openmrs.module"/>
-			<attribute name="maven.artifactId" value="uiframework-api"/>
-			<attribute name="maven.version" value="3.0"/>
-			<attribute name="maven.scope" value="provided"/>
-			<attribute name="maven.optionaldependency" value="true"/>
-		</attributes>
-	</classpathentry>
+	
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
