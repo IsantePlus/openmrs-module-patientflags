@@ -31,6 +31,39 @@
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>uiframework-api</artifactId>
 		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>emrapi-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appui-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appui-omod</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>coreapps-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>coreapps-omod</artifactId>
+				<version>${coreappsVersion}</version>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>appframework-api</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>idgen-api</artifactId>
+        </dependency>
+        <dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>referenceapplication-omod</artifactId>
+			</dependency>											
 		<!-- dependencies required for testing -->
 		<dependency>
 			<groupId>cglib</groupId>
