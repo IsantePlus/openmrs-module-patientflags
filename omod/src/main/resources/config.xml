@@ -8,7 +8,7 @@
 	<package>@MODULE_PACKAGE@</package>
 	<author>Mark Goodrich</author>
 	<description>Adds the ability to flag patient records</description>
-	<activator>@MODULE_PACKAGE@.PatientFlagsModuleActivator</activator>
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.PatientFlagsActivator</activator>
      <require_version>${openMRSVersion}</require_version> 
      <require_modules>
     <require_module>
@@ -29,6 +29,9 @@
         <require_module>
             org.openmrs.module.idgen
         </require_module>
+        <require_module>
+            org.openmrs.module.legacyui
+        </require_module>        
 </require_modules>
 	<!-- /Patient Flags Module Properties -->
 	

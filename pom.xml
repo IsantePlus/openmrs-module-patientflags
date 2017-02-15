@@ -36,9 +36,11 @@
 
 <!-- default property values, required for eclipse build path configuration -->
 	<properties>
-		<openMRSVersion>1.11.0</openMRSVersion>
+		<openMRSVersion>2.0.1</openMRSVersion>
 		<openMRSMinorVersion>1.11</openMRSMinorVersion>
 		<logicVersion>0.5</logicVersion>
+		<legacyuiVersion>1.2.3</legacyuiVersion>
+		<calcVersion>1.2</calcVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<emrapiVersion>1.17</emrapiVersion>
 		<appuiVersion>1.6</appuiVersion>
@@ -124,6 +126,30 @@
 				<version>${referenceapplicationVersion}</version>
 				<scope>provided</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-omod</artifactId>
+				<version>${calcVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-api</artifactId>
+				<version>${calcVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-omod</artifactId>
+				<version>${legacyuiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-api</artifactId>
+				<version>${legacyuiVersion}</version>
+				<scope>provided</scope>
+			</dependency>									
 			<!-- End OpenMRS modules -->
 		
 		
@@ -183,7 +209,6 @@
 			<properties>
 				<openMRSVersion>1.6.5</openMRSVersion>
 				<openMRSMinorVersion>1.6</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
 			</properties>
 		    
 		    <dependencyManagement>
@@ -206,7 +231,7 @@
 			<properties>
 				<openMRSVersion>1.7.3</openMRSVersion>
 				<openMRSMinorVersion>1.7</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		     <dependencyManagement>
@@ -229,7 +254,7 @@
 		    <properties>
 				<openMRSVersion>1.8.3</openMRSVersion>
 				<openMRSMinorVersion>1.8</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>
@@ -265,7 +290,7 @@
 		    <properties>
 				<openMRSVersion>1.9.0</openMRSVersion>
 				<openMRSMinorVersion>1.9</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+	
 			</properties>
 		    
 		    <dependencyManagement>
@@ -301,7 +326,7 @@
 		    <properties>
 				<openMRSVersion>1.10.0-SNAPSHOT</openMRSVersion>
 				<openMRSMinorVersion>1.10</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>
@@ -337,7 +362,7 @@
 		    <properties>
 				<openMRSVersion>1.11.5</openMRSVersion>
 				<openMRSMinorVersion>1.11</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>

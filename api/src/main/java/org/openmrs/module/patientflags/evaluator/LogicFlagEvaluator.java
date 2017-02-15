@@ -44,7 +44,7 @@ public class LogicFlagEvaluator implements FlagEvaluator {
 		
 		try {
 			LogicCriteria logicCriteria = logicService.parse(flag.getCriteria());
-			result = logicService.eval(patient, logicCriteria).toBoolean();
+			result = logicService.eval(patient.getPatientId(), logicCriteria).toBoolean();
 		}
 		catch (Exception e) {
 				throw new APIException("Unable to evaluate Logic Flag " + flag.getName() + ", " + e.getLocalizedMessage(), e);

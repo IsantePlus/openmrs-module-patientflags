@@ -56,7 +56,7 @@ public class FindFlaggedPatientsEmailController {
 		FlagService flagService = Context.getService(FlagService.class);
 		flag = flagService.getFlag(flag.getFlagId());
 		Cohort flaggedPatients = flagService.getFlaggedPatients(flag);
-		Cohort allPatients = Context.getPatientSetService().getAllPatients();
+		Cohort allPatients = (Cohort) Context.getPatientService().getAllPatients();
 		
 		// create the model map
 		ModelMap model = new ModelMap();

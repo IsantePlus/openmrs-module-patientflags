@@ -52,10 +52,28 @@
 				<artifactId>coreapps-omod</artifactId>
 				<version>${coreappsVersion}</version>
 		</dependency>
+				<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-omod</artifactId>
+		</dependency>		
+		
 		<dependency>
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>appframework-api</artifactId>
 		</dependency>
+		
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-api</artifactId>
+		</dependency>
+		<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-omod</artifactId>
+		</dependency>		
 		<dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>idgen-api</artifactId>
@@ -73,13 +91,6 @@
 			<scope>test</scope>
 		</dependency>	
 		
-		<dependency>
-		 	<groupId>org.openmrs.module</groupId>
-		  	<artifactId>logic</artifactId>
-		  	<type>jar</type>
-		  	<version>${logicVersion}</version>
-		  	<scope>test</scope>
-		</dependency>
 		
 		<dependency>
   			<groupId>org.codehaus.groovy</groupId>
@@ -167,23 +178,6 @@
               			</execution>
       			</executions>
 			</plugin>
-			<plugin>
-       			<groupId>org.codehaus.mojo</groupId>
-        		<artifactId>buildnumber-maven-plugin</artifactId>
-        		<version>1.0</version>
-        		<executions>
-          			<execution>
-            			<phase>validate</phase>
-            			<goals>
-              				<goal>create</goal>
-            			</goals>
-          			</execution>
-        		</executions>
-        		<configuration>
-          			<doCheck>false</doCheck>
-          			<doUpdate>false</doUpdate>
-        		</configuration>
-     			</plugin>
    		</plugins>	
 	</build>
 

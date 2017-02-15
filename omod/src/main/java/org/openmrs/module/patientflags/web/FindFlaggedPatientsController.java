@@ -99,7 +99,7 @@ public class FindFlaggedPatientsController {
 		FlagService flagService = Context.getService(FlagService.class);
 		flag = flagService.getFlag(flag.getFlagId());
 		Cohort flaggedPatients = flagService.getFlaggedPatients(flag);
-		Cohort allPatients = Context.getPatientSetService().getAllPatients();
+		Cohort allPatients = (Cohort) Context.getPatientService().getAllPatients();
 		
 		// create the model map
 		ModelMap model = new ModelMap();
@@ -144,7 +144,7 @@ public class FindFlaggedPatientsController {
 		
 		// returns a map of flagged Patients and the respective flags
 		Cohort flaggedPatients = flagService.getFlaggedPatients(flags);
-		Cohort allPatients = Context.getPatientSetService().getAllPatients();
+		Cohort allPatients = (Cohort) Context.getPatientService().getAllPatients();
 		
 		// create the model map
 		ModelMap model = new ModelMap();
