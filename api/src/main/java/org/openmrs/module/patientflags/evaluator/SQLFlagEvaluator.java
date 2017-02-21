@@ -199,4 +199,5 @@ public class SQLFlagEvaluator implements FlagEvaluator {
 		
 		return message;
 	}
+
 }

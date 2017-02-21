@@ -1,0 +1,11 @@
+[
+    {
+        "id": "org.openmrs.module.patientflags.patientDashboard.secondColumnFragments.alerte",
+        "extensionPointId": "patientDashboard.secondColumnFragments",
+        "order": 0,
+        "extensionParams": {
+            "provider": "patientflags",
+            "fragment": "alerte"
+        }
+    }
+]

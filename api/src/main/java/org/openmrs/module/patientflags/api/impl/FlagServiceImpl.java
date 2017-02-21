@@ -41,7 +41,7 @@ import org.openmrs.module.patientflags.comparator.FlagAlphaComparator;
 import org.openmrs.module.patientflags.comparator.FlagPriorityComparator;
 import org.openmrs.module.patientflags.comparator.PriorityComparator;
 import org.openmrs.module.patientflags.comparator.TagAlphaComparator;
-import org.openmrs.module.patientflags.db.FlagDAO;
+import org.openmrs.module.patientflags.api.db.FlagDAO;
 import org.openmrs.module.patientflags.filter.Filter;
 import org.openmrs.module.patientflags.filter.FilterType;
 

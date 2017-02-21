@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module configVersion="1.0">
+
+<module configVersion="1.2">
+
+	<!-- Module Properties -->
+	<id>${project.parent.artifactId}</id>
+	<name>${project.parent.name}</name>
+	<version>${project.parent.version}</version>
+	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
+	<author>jmaxy</author>
+	<description>
+		${project.parent.description}
+	</description>
+	<updateURL>https://modules.openmrs.org/modules/download/${project.parent.artifactId}/update.rdf</updateURL>
+	<require_version>${openMRSVersion}</require_version>
+	<!-- / Module Properties -->
+
 	
-	<!-- Patient Flags Module Properties -->
-	<id>@MODULE_ID@</id>
-	<name>@MODULE_NAME@</name>
-	<version>@MODULE_VERSION@</version>
-	<package>@MODULE_PACKAGE@</package>
-	<author>Mark Goodrich</author>
-	<description>Adds the ability to flag patient records</description>
-	<activator>@MODULE_PACKAGE@.PatientFlagsModuleActivator</activator>
-     <require_version>${openMRSVersion}</require_version> 
-     <require_modules>
-    <require_module>
+	<!-- Module Activator -->
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.PatientFlagsActivator</activator>
+	
+	<require_modules>
+	 <require_module>
         org.openmrs.module.uiframework
     </require_module>
     <require_module>
 			org.openmrs.module.appframework
 	</require_module>
-     <require_module>
-        org.openmrs.module.coreapps
-    </require_module>
+ 
     <require_module>
             org.openmrs.module.emrapi
      </require_module>
@@ -29,46 +36,42 @@
         <require_module>
             org.openmrs.module.idgen
         </require_module>
-</require_modules>
-	<!-- /Patient Flags Module Properties -->
+        <require_module>
+            org.openmrs.module.legacyui
+        </require_module>
+	</require_modules>
 	
-	<!-- Required Modules -->
-<!-- 	<require_modules>
-	   	<require_module>org.openmrs.logic</require_module>
-	</require_modules> -->
+	<!-- Adds link to admin page -->
+	<extension>
+		<point>org.openmrs.admin.list</point>
+		<class>${project.parent.groupId}.${project.parent.artifactId}.extension.html.FlagAdminExt</class>
+	</extension>
+	
+	<!-- Maps hibernate file's, if present -->
+	<mappingFiles>			
+		DisplayPoint.hbm.xml
+		Flag.hbm.xml
+		Priority.hbm.xml
+		Tag.hbm.xml		
+	</mappingFiles>
 
 	<!-- Internationalization -->
+	<!-- All message codes should start with ${project.parent.artifactId}. -->
 	<messages>
 		<lang>en</lang>
 		<file>messages.properties</file>
 	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<!-- /Internationalization -->
 	
-	<!-- Mapping File for the Flag Table -->
-	<mappingFiles>
-		${omodHbmConfig}
-	</mappingFiles>
-	
-	<!--  Extension Points -->
-
-<!--  Handling extension in the activator now so that they can be configured/activated via global properties -->
-	<!--  
-	<extension>
-		<point>org.openmrs.patientDashboard.afterLastEncounter</point>
-		<class>org.openmrs.module.patientflags.extension.html.FlagPatientDashboardHeaderExt</class>
-	</extension> 
-
-	<extension>
-		<point>org.openmrs.patientDashboard.overviewBox</point>
-		<class>org.openmrs.module.patientflags.extension.html.FlagPatientOverviewExt</class>
-	</extension> 
-
-	<extension>
-		<point>org.openmrs.admin.list</point>
-		<class>org.openmrs.module.patientflags.extension.html.FlagAdminExt</class>
-	</extension> -->
-
-	
-	<!-- Required Privileges -->
+		<!-- Required Privileges -->
 	<privilege>
 		<name>Manage Flags</name>
 		<description>Allows user add, edit, and remove flags</description>
@@ -78,5 +81,6 @@
 		<name>Test Flags</name>
 		<description>Allows the user to test a flag, or set of flags, against a Patient set</description>
 	</privilege>
-	
+
 </module>
+
