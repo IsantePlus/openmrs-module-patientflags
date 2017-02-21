@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+
+	<!-- Module Properties -->
+	<id>patientflags</id>
+	<name>Patient Flags Module</name>
+	<version>1.3.5-SNAPSHOT</version>
+	<package>org.openmrs.module.patientflags</package>
+	<author>jmaxy</author>
+	<description>
+		Helps to start writing OpenMRS modules
+	</description>
+	<updateURL>https://modules.openmrs.org/modules/download/patientflags/update.rdf</updateURL>
+	<require_version>2.0.1</require_version>
+	<!-- / Module Properties -->
+
+	
+	<!-- Module Activator -->
+	<activator>org.openmrs.module.patientflags.PatientFlagsActivator</activator>
+	
+	<require_modules>
+	 <require_module>
+        org.openmrs.module.uiframework
+    </require_module>
+    <require_module>
+			org.openmrs.module.appframework
+	</require_module>
+ 
+    <require_module>
+            org.openmrs.module.emrapi
+     </require_module>
+     <require_module>
+            org.openmrs.module.appui
+      </require_module>
+        <require_module>
+            org.openmrs.module.idgen
+        </require_module>
+        <require_module>
+            org.openmrs.module.legacyui
+        </require_module>
+	</require_modules>
+	
+	<!-- Adds link to admin page -->
+	<extension>
+		<point>org.openmrs.admin.list</point>
+		<class>org.openmrs.module.patientflags.extension.html.FlagAdminExt</class>
+	</extension>
+	
+	<!-- Maps hibernate file's, if present -->
+	<mappingFiles>			
+		DisplayPoint.hbm.xml
+		Flag.hbm.xml
+		Priority.hbm.xml
+		Tag.hbm.xml		
+	</mappingFiles>
+
+	<!-- Internationalization -->
+	<!-- All message codes should start with patientflags. -->
+	<messages>
+		<lang>en</lang>
+		<file>messages.properties</file>
+	</messages>
+	<messages>
+		<lang>fr</lang>
+		<file>messages_fr.properties</file>
+	</messages>
+	<messages>
+		<lang>es</lang>
+		<file>messages_es.properties</file>
+	</messages>
+	<!-- /Internationalization -->
+	
+		<!-- Required Privileges -->
+	<privilege>
+		<name>Manage Flags</name>
+		<description>Allows user add, edit, and remove flags</description>
+	</privilege>
+	
+	<privilege>
+		<name>Test Flags</name>
+		<description>Allows the user to test a flag, or set of flags, against a Patient set</description>
+	</privilege>
+
+</module>
+
