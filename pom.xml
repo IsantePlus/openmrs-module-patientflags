@@ -42,11 +42,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<emrapiVersion>1.17</emrapiVersion>
 		<appuiVersion>1.9.0</appuiVersion>
-		<coreappsVersion>1.9.1</coreappsVersion>
+		<coreappsVersion>1.19.1</coreappsVersion>
 		<appframeworkVersion>2.8</appframeworkVersion>
 		<uiframeworkVersion>3.6</uiframeworkVersion>
 		<idgenVersion>4.3</idgenVersion>
-		<referenceapplicationVersion>2.6</referenceapplicationVersion>
+		<referenceapplicationVersion>2.6.0</referenceapplicationVersion>
 	</properties>
 
 	<dependencyManagement>
