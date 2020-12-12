@@ -41,13 +41,12 @@
 		<logicVersion>0.5</logicVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<emrapiVersion>1.17</emrapiVersion>
-		<appuiVersion>1.6</appuiVersion>
-		<coreappsVersion>1.9</coreappsVersion>
-		<appuiVersion>1.5.1</appuiVersion>
+		<appuiVersion>1.9.0</appuiVersion>
+		<coreappsVersion>1.19.1</coreappsVersion>
 		<appframeworkVersion>2.8</appframeworkVersion>
 		<uiframeworkVersion>3.6</uiframeworkVersion>
 		<idgenVersion>4.3</idgenVersion>
-		<referenceapplicationVersion>2.3</referenceapplicationVersion>
+		<referenceapplicationVersion>2.6.0</referenceapplicationVersion>
 	</properties>
 
 	<dependencyManagement>
@@ -367,6 +366,56 @@
 			</dependencyManagement>
 		</profile>
 		
-		
+		<profile>
+			<!-- Github Packages Integration -->
+			<id>github-packages</id>
+			<distributionManagement>
+			<!-- Deploy to Github Packages -->
+			<repository>
+				<id>github-packages</id>
+				<name>Github iSantePlus Packages</name>
+				<url>https://maven.pkg.github.com/isanteplus/isanteplus-packages</url>
+				<uniqueVersion>false</uniqueVersion>
+			</repository>
+			<snapshotRepository>
+				<id>github-packages</id>
+				<name>Github iSantePlus Packages</name>
+				<url>https://maven.pkg.github.com/isanteplus/isanteplus-packages</url>
+				<uniqueVersion>true</uniqueVersion>
+			</snapshotRepository>
+			</distributionManagement>
+			<repositories>
+			<!-- Use the Github Packages Repo first when looking up dependencies -->
+			<repository>
+				<id>github-packages</id>
+				<name>Github iSantePlus Packages</name>
+				<url>https://maven.pkg.github.com/isanteplus/isanteplus-packages</url>
+			</repository>
+			</repositories>
+			<build>
+			<plugins>
+				<!-- Disable possible test jar generation -->
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<executions>
+					<execution>
+					<phase>none</phase>
+					</execution>
+				</executions>
+				</plugin>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<executions>
+					<execution>
+					<id>validate</id>
+					<phase>none</phase>
+					</execution>
+				</executions>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
 	</profiles>
 </project>
