@@ -46,7 +46,6 @@ org/openmrs/module/patientflags/web/ManageTagsController.class
 org/openmrs/module/patientflags/web/controller/ManageFlagsController$1.class
 org/openmrs/module/patientflags/web/controller/validators/TagValidator.class
 org/openmrs/module/patientflags/web/EditTagController$2.class
-org/openmrs/module/patientflags/web/controller/ManagePatientFlagsProperties.class
 org/openmrs/module/patientflags/web/validators/PriorityValidator.class
 org/openmrs/module/patientflags/web/EditFlagController$1.class
 org/openmrs/module/patientflags/web/EditTagController$1.class

@@ -20,7 +20,6 @@
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/controller/validators/PatientFlagsPropertiesValidator.java
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/ManagePrioritiesController.java
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/controller/ManageFlagsController.java
-/Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/controller/ManagePatientFlagsProperties.java
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/ManagePatientFlagsProperties.java
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/web/controller/validators/FlagValidator.java
 /Users/pmanko/code/openmrs-module-patientflags/omod/src/main/java/org/openmrs/module/patientflags/extension/html/FlagPatientOverviewExt.java
