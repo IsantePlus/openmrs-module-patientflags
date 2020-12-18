@@ -13,13 +13,13 @@
  */
 package org.openmrs.module.patientflags.api.db;
 
-import java.util.List;
-
 import org.openmrs.api.db.DAOException;
 import org.openmrs.module.patientflags.DisplayPoint;
 import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.Priority;
 import org.openmrs.module.patientflags.Tag;
+
+import java.util.List;
 
 /**
  * Database access object for the Flag table (flag_flag) and Tag table (flag_tag)

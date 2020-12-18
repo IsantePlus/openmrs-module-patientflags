@@ -13,8 +13,6 @@
  */
 package org.openmrs.module.patientflags.web.controller;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.api.FlagService;
 import org.springframework.stereotype.Controller;
@@ -22,6 +20,8 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Controller that handles deleting Patient Flag via the webapp. Called by http request

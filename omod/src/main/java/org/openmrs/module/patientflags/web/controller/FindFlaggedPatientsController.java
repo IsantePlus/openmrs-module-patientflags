@@ -13,14 +13,6 @@
  */
 package org.openmrs.module.patientflags.web.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.openmrs.Cohort;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Flag;
@@ -40,6 +32,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.*;
 
 /**
  * Controller that handles retrieving Patients that match a Flag criteria

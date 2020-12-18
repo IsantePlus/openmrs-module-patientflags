@@ -14,19 +14,18 @@
 package org.openmrs.module.patientflags;
 
 
-import org.apache.commons.logging.Log; 
+import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.GlobalProperty;
+import org.openmrs.api.context.Context;
+import org.openmrs.module.Extension;
+import org.openmrs.module.Module;
 import org.openmrs.module.ModuleActivator;
+import org.openmrs.module.ModuleFactory;
+
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Vector;
-
-import org.openmrs.GlobalProperty;
-import org.openmrs.api.context.Context;
-
-import org.openmrs.module.Extension;
-import org.openmrs.module.Module;
-import org.openmrs.module.ModuleFactory;
 
 /**
  * This class contains the logic that is run every time this module is either started or stopped.

@@ -13,13 +13,13 @@
  */
 package org.openmrs.module.patientflags.web.controller.validators;
 
-import java.util.List;
-
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Tag;
 import org.openmrs.module.patientflags.api.FlagService;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
+
+import java.util.List;
 
 /**
  * Validator for the Tag class

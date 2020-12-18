@@ -13,9 +13,9 @@
  */
 package org.openmrs.module.patientflags.comparator;
 
-import java.util.Comparator;
-
 import org.openmrs.module.patientflags.Tag;
+
+import java.util.Comparator;
 
 /**
  * Compares Flags based on the Name (alphabetized)

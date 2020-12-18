@@ -2,17 +2,14 @@
 
 <!--  include context for annotation mapping -->
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:context="http://www.springframework.org/schema/context"
-	   xmlns:util="http://www.springframework.org/schema/util"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	        http://www.springframework.org/schema/context
-	        http://www.springframework.org/schema/context/spring-context-2.5.xsd
-	        http://www.springframework.org/schema/util
-	        http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	        http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 	 
-	<context:component-scan base-package="org.openmrs.module.patientflags" />
+	<context:component-scan base-package="@MODULE_PACKAGE@" />
 	
 	<!--  Configure the Flag Service -->
    	<bean parent="serviceContext" id="flagService">
@@ -24,7 +21,7 @@
 					<property name="target">
 						<bean class="org.openmrs.module.patientflags.api.impl.FlagServiceImpl">
 							<property name="flagDAO">
-								<bean class="org.openmrs.module.patientflags.api.db.hibernate.HibernateFlagDAO">
+								<bean class="org.openmrs.module.patientflags.db.hibernate.HibernateFlagDAO">
 									<property name="sessionFactory"><ref bean="sessionFactory"/></property>	
 								</bean>
 							</property>
@@ -56,23 +53,23 @@
 	</bean>
 	<!--  Controllers -->
 	<!-- (need to specify the Portlet controller here instead of via annotations, see URL mappings above) -->
-	<bean id="flagPatientOverviewPortletController" class="org.openmrs.module.patientflags.web.controller.portlets.FlagPatientOverviewPortletController"> </bean>
+	<bean id="flagPatientOverviewPortletController" class="@MODULE_PACKAGE@.web.portlets.FlagPatientOverviewPortletController"> </bean>
 	
 	<!-- configure the Flag Validator -->
-	<bean id="flagValidator" class="org.openmrs.module.patientflags.web.controller.validators.FlagValidator" />
+	<bean id="flagValidator" class="org.openmrs.module.patientflags.web.validators.FlagValidator" />
 	
 	<!-- configure the Tag Validator -->
-	<bean id="tagValidator" class="org.openmrs.module.patientflags.web.controller.validators.TagValidator" />
+	<bean id="tagValidator" class="org.openmrs.module.patientflags.web.validators.TagValidator" />
 	
 	<!--  configure the alerte controller -->
 	<bean id="alerte" class="org.openmrs.module.patientflags.fragment.controller.AlerteFragmentController"/>
 	
 	
 	<!-- configure the Priority Validator -->
-	<bean id="priorityValidator" class="org.openmrs.module.patientflags.web.controller.validators.PriorityValidator" />
+	<bean id="priorityValidator" class="org.openmrs.module.patientflags.web.validators.PriorityValidator" />
 	
 	<!-- configure the Patient Flags Properties Validator -->
-	<bean id="patientFlagsPropertiesValidator" class="org.openmrs.module.patientflags.web.controller.validators.PatientFlagsPropertiesValidator" />
+	<bean id="patientFlagsPropertiesValidator" class="org.openmrs.module.patientflags.web.validators.PatientFlagsPropertiesValidator" />
 	
 	
 </beans>

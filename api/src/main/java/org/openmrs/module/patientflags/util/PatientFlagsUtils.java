@@ -13,12 +13,12 @@
  */
 package org.openmrs.module.patientflags.util;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Tag;
 import org.openmrs.module.patientflags.api.FlagService;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class PatientFlagsUtils {

@@ -13,8 +13,6 @@
  */
 package org.openmrs.module.patientflags.web;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.Priority;
 import org.openmrs.module.patientflags.api.FlagService;
@@ -31,6 +29,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Controller that handles adding and editing Priority via the webapp. Called by http request

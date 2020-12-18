@@ -13,8 +13,6 @@
  */
 package org.openmrs.module.patientflags.api.db.hibernate;
 
-import java.util.List;
-
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.MatchMode;
@@ -25,6 +23,8 @@ import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.Priority;
 import org.openmrs.module.patientflags.Tag;
 import org.openmrs.module.patientflags.api.db.FlagDAO;
+
+import java.util.List;
 
 /**
  * Implementation of the {@link FlagDAO}

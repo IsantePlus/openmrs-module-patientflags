@@ -13,10 +13,6 @@
  */
 package org.openmrs.module.patientflags.api;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
-
 import org.openmrs.Cohort;
 import org.openmrs.Patient;
 import org.openmrs.Privilege;
@@ -24,14 +20,13 @@ import org.openmrs.Role;
 import org.openmrs.annotation.Authorized;
 import org.openmrs.api.APIException;
 import org.openmrs.api.OpenmrsService;
-import org.openmrs.module.patientflags.DisplayPoint;
-import org.openmrs.module.patientflags.Flag;
-import org.openmrs.module.patientflags.PatientFlagsConstants;
-import org.openmrs.module.patientflags.PatientFlagsProperties;
-import org.openmrs.module.patientflags.Priority;
-import org.openmrs.module.patientflags.Tag;
+import org.openmrs.module.patientflags.*;
 import org.openmrs.module.patientflags.filter.Filter;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Provides methods to access flag services
