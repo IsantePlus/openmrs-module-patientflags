@@ -15,9 +15,6 @@ package org.openmrs.module.patientflags.evaluator;
 
 import groovy.lang.Binding;
 import groovy.lang.GroovyShell;
-
-import java.util.Collection;
-
 import org.openmrs.Cohort;
 import org.openmrs.Privilege;
 import org.openmrs.User;
@@ -25,6 +22,8 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.ModuleFactory;
 import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.api.FlagService;
+
+import java.util.Collection;
 
 /**
  * Underlying thread to handle groovy flag evaluations  (for security reasons)
@@ -165,7 +164,7 @@ public class GroovyFlagEvaluatorThread implements Runnable{
 		binding.setVariable("obs", Context.getObsService());
 		binding.setVariable("order", Context.getOrderService());
 		binding.setVariable("patient", Context.getPatientService());
-		binding.setVariable("patientSet", Context.getPatientSetService());
+		binding.setVariable("patientSet", Context.getPatientService().getAllPatients(true));
 		binding.setVariable("person", Context.getPersonService());
 		binding.setVariable("program", Context.getProgramWorkflowService());
 		binding.setVariable("user", Context.getUserService());

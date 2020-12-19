@@ -13,37 +13,23 @@
  */
 package org.openmrs.module.patientflags.api.impl;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.Cohort;
-import org.openmrs.GlobalProperty;
-import org.openmrs.Patient;
-import org.openmrs.Privilege;
-import org.openmrs.Role;
-import org.openmrs.User;
+import org.openmrs.*;
 import org.openmrs.api.APIException;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.impl.BaseOpenmrsService;
-import org.openmrs.module.patientflags.DisplayPoint;
-import org.openmrs.module.patientflags.Flag;
-import org.openmrs.module.patientflags.PatientFlagsProperties;
-import org.openmrs.module.patientflags.Priority;
-import org.openmrs.module.patientflags.Tag;
+import org.openmrs.module.patientflags.*;
 import org.openmrs.module.patientflags.api.FlagService;
+import org.openmrs.module.patientflags.api.db.FlagDAO;
 import org.openmrs.module.patientflags.comparator.FlagAlphaComparator;
 import org.openmrs.module.patientflags.comparator.FlagPriorityComparator;
 import org.openmrs.module.patientflags.comparator.PriorityComparator;
 import org.openmrs.module.patientflags.comparator.TagAlphaComparator;
-import org.openmrs.module.patientflags.db.FlagDAO;
 import org.openmrs.module.patientflags.filter.Filter;
 import org.openmrs.module.patientflags.filter.FilterType;
+
+import java.util.*;
 
 /**
  * Implementation of the {@link FlagService}

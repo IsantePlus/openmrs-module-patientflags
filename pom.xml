@@ -1,52 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.openmrs.module</groupId>
 	<artifactId>patientflags</artifactId>
-	<version>1.3.5-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Patient Flags Module</name>
-	<description>Parent project for Patient Flags Module</description>
-
-	<url>http://openmrs.org</url>
+	<description>Helps to start writing OpenMRS modules</description>
+	<url>https://wiki.openmrs.org/display/docs/Patient+Flags+Module+Module</url>
+	
+	<developers>
+		<developer>
+			<name>jmaxy</name>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>OpenMRS</name>
+		<url>http://openmrs.org</url>
+	</organization>
 
 	<scm>
-		<connection>scm:git:https://github.com/openmrs/openmrs-module-patientflags</connection>
-		<developerConnection>scm:git:https://github.com/openmrs/openmrs-module-patientflags</developerConnection>
-		<url>https://github.com/openmrs/openmrs-module-patientflags/</url>
+		<connection>scm:svn:https://svn.openmrs.org/openmrs-modules/patientflags/trunk/</connection>
+		<developerConnection>scm:svn:https://svn.openmrs.org/openmrs-modules/patientflags/trunk/</developerConnection>
+		<url>https://svn.openmrs.org/openmrs-modules/patientflags/trunk/</url>
 	</scm>
-
-	<distributionManagement>
-		<repository>
-			<id>openmrs-repo-modules</id>
-			<name>Modules</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/modules/</url>
-		</repository>
-		<snapshotRepository>
-			<id>openmrs-repo-snapshots</id>
-			<name>OpenMRS Snapshots</name>
-			<url>http://mavenrepo.openmrs.org/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<modules>
 		<module>api</module>
 		<module>omod</module>
 	</modules>
-
-<!-- default property values, required for eclipse build path configuration -->
+	
 	<properties>
-		<openMRSVersion>1.11.0</openMRSVersion>
+		<openMRSVersion>2.0.1</openMRSVersion>
 		<openMRSMinorVersion>1.11</openMRSMinorVersion>
 		<logicVersion>0.5</logicVersion>
+		<legacyuiVersion>1.2.3</legacyuiVersion>
+		<calcVersion>1.2</calcVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<emrapiVersion>1.17</emrapiVersion>
-		<appuiVersion>1.9.0</appuiVersion>
-		<coreappsVersion>1.19.1</coreappsVersion>
+		<appuiVersion>1.6</appuiVersion>
+		<coreappsVersion>1.11.0</coreappsVersion>
+		<appuiVersion>1.6</appuiVersion>
 		<appframeworkVersion>2.8</appframeworkVersion>
 		<uiframeworkVersion>3.6</uiframeworkVersion>
 		<idgenVersion>4.3</idgenVersion>
-		<referenceapplicationVersion>2.6.0</referenceapplicationVersion>
+		<referenceapplicationVersion>2.3</referenceapplicationVersion>
 	</properties>
 
 	<dependencyManagement>
@@ -123,9 +123,75 @@
 				<version>${referenceapplicationVersion}</version>
 				<scope>provided</scope>
 			</dependency>
-			<!-- End OpenMRS modules -->
-		
-		
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-omod</artifactId>
+				<version>${calcVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>calculation-api</artifactId>
+				<version>${calcVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-omod</artifactId>
+				<version>${legacyuiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>legacyui-api</artifactId>
+				<version>${legacyuiVersion}</version>
+				<scope>provided</scope>
+			</dependency>									
+
+			<!-- Begin OpenMRS core -->
+			
+			<dependency>
+				<groupId>org.openmrs.api</groupId>
+				<artifactId>openmrs-api</artifactId>
+				<version>${openMRSVersion}</version>
+				<type>jar</type>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.openmrs.web</groupId>
+				<artifactId>openmrs-web</artifactId>
+				<version>${openMRSVersion}</version>
+				<type>jar</type>
+				<scope>provided</scope>
+			</dependency>
+						
+			<dependency>
+				<groupId>org.openmrs.api</groupId>
+				<artifactId>openmrs-api</artifactId>
+				<version>${openMRSVersion}</version>
+				<type>test-jar</type>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.openmrs.web</groupId>
+				<artifactId>openmrs-web</artifactId>
+				<version>${openMRSVersion}</version>
+				<type>test-jar</type>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.openmrs.test</groupId>
+				<artifactId>openmrs-test</artifactId>
+				<version>${openMRSVersion}</version>
+				<type>pom</type>
+				<scope>test</scope>
+			</dependency>
+						
+			<!-- End OpenMRS core -->
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -173,7 +239,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<!-- different profiles for building/testing against different version of openmrs -->
+<!-- different profiles for building/testing against different version of openmrs -->
 	<profiles>
 	
 		<profile>
@@ -182,7 +248,6 @@
 			<properties>
 				<openMRSVersion>1.6.5</openMRSVersion>
 				<openMRSMinorVersion>1.6</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
 			</properties>
 		    
 		    <dependencyManagement>
@@ -205,7 +270,7 @@
 			<properties>
 				<openMRSVersion>1.7.3</openMRSVersion>
 				<openMRSMinorVersion>1.7</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		     <dependencyManagement>
@@ -228,7 +293,7 @@
 		    <properties>
 				<openMRSVersion>1.8.3</openMRSVersion>
 				<openMRSMinorVersion>1.8</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>
@@ -264,7 +329,7 @@
 		    <properties>
 				<openMRSVersion>1.9.0</openMRSVersion>
 				<openMRSMinorVersion>1.9</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+	
 			</properties>
 		    
 		    <dependencyManagement>
@@ -300,7 +365,7 @@
 		    <properties>
 				<openMRSVersion>1.10.0-SNAPSHOT</openMRSVersion>
 				<openMRSMinorVersion>1.10</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>
@@ -331,12 +396,12 @@
 		</profile>
 		
 		<profile>
-			<id>openmrs-1.11.5</id>
+			<id>openmrs-2.0.1</id>
 		    
 		    <properties>
-				<openMRSVersion>1.11.5</openMRSVersion>
-				<openMRSMinorVersion>1.11</openMRSMinorVersion>
-				<logicVersion>0.5</logicVersion>
+				<openMRSVersion>2.0.1</openMRSVersion>
+				<openMRSMinorVersion>2.0</openMRSMinorVersion>
+
 			</properties>
 		    
 		    <dependencyManagement>

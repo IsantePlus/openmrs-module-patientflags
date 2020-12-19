@@ -13,14 +13,14 @@
  */
 package org.openmrs.module.patientflags.extension.html;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import org.openmrs.User;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.Extension;
 import org.openmrs.module.patientflags.PatientFlagsConstants;
 import org.openmrs.module.web.extension.AdministrationSectionExt;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /*
  * Class that adds Flag module menu items to the Admin page

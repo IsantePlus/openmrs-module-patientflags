@@ -14,10 +14,10 @@
 
 package org.openmrs.module.patientflags;
 
-import java.util.Set;
-
 import org.openmrs.BaseOpenmrsMetadata;
 import org.openmrs.Role;
+
+import java.util.Set;
 
 /**
  * This class represents a row in the flag_tag table. Tags are strings that can be associated with

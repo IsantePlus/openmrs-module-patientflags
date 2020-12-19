@@ -13,24 +13,23 @@
  */
 package org.openmrs.module.patientflags;
 
-import java.util.IdentityHashMap;
-import java.util.List;
-import java.util.Vector;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import org.openmrs.GlobalProperty;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.Activator;
+import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.Extension;
 import org.openmrs.module.Module;
 import org.openmrs.module.ModuleFactory;
 
+import java.util.IdentityHashMap;
+import java.util.List;
+import java.util.Vector;
+
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
  */
-public class PatientFlagsModuleActivator implements Activator {
+public class PatientFlagsModuleActivator extends BaseModuleActivator {
 	
 	private Log log = LogFactory.getLog(this.getClass());
 	

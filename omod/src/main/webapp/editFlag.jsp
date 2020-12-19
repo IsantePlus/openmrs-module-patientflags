@@ -11,7 +11,6 @@
 	src="${pageContext.request.contextPath}/scripts/jquery/jquery-1.3.2.min.js"></script>
 
 <script type="text/javascript"><!--
-
 	// function that sets the value of the custom evaluator radiobutton to the value of the custom evaluator text box
 	function updateCustomEvaluatorValue(){
 		var className = $('#customEvaluatorTextbox').attr('value');
@@ -26,7 +25,6 @@
 		}else{
 			$('#customEvaluatorBlock').hide();
 		}
-
 		// event handlers to hide and show custom evaluator text box
 		$('.evaluator').click(function disableCustomEvaluator(){
 			$('#customEvaluatorBlock').hide();
@@ -34,7 +32,6 @@
 		$('#customEvaluator').click(function (){
 			$('#customEvaluatorBlock').show();
 		});
-
 		// event handler to update custom evaluator value on change to value of custom evaluator text box
 		$('#customEvaluatorTextbox').change(updateCustomEvaluatorValue);
 	});
@@ -99,6 +96,7 @@
 				<springform:options items="${priorities}" itemValue="priorityId" itemLabel="name" />
 			</springform:select></td>
 		</tr>
+
 		<tr>
 			<td align="right" valign="top"><spring:message
 				code="patientflags.editFlag.associatedTags" />:</td>

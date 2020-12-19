@@ -13,8 +13,6 @@
  */
 package org.openmrs.module.patientflags.evaluator;
 
-import java.util.Map;
-
 import org.openmrs.Cohort;
 import org.openmrs.Patient;
 import org.openmrs.api.APIException;
@@ -24,6 +22,8 @@ import org.openmrs.logic.LogicService;
 import org.openmrs.logic.result.Result;
 import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.FlagValidationResult;
+
+import java.util.Map;
 
 /**
  * A FlagEvaluator that takes a OpenMRS logic string as it's criteria
@@ -44,7 +44,7 @@ public class LogicFlagEvaluator implements FlagEvaluator {
 		
 		try {
 			LogicCriteria logicCriteria = logicService.parse(flag.getCriteria());
-			result = logicService.eval(patient, logicCriteria).toBoolean();
+			result = logicService.eval(patient.getPatientId(), logicCriteria).toBoolean();
 		}
 		catch (Exception e) {
 				throw new APIException("Unable to evaluate Logic Flag " + flag.getName() + ", " + e.getLocalizedMessage(), e);

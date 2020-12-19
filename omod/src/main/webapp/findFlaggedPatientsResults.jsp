@@ -1,4 +1,3 @@
-<%@page import="org.openmrs.module.patientflags.Flag"%>
 <%@ include file="/WEB-INF/template/include.jsp"%>
 
 <openmrs:require privilege="Test Flags" otherwise="/login.htm"

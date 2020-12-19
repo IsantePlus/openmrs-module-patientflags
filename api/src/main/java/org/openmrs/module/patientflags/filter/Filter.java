@@ -14,12 +14,12 @@
 
 package org.openmrs.module.patientflags.filter;
 
+import org.openmrs.module.patientflags.Flag;
+import org.openmrs.module.patientflags.Tag;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
-import org.openmrs.module.patientflags.Flag;
-import org.openmrs.module.patientflags.Tag;
 
 /**
  * Provides the means to filter a list of Flags by a set of Tags

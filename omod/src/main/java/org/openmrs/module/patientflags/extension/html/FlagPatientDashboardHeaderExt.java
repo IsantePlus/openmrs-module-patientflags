@@ -13,14 +13,14 @@
  */
 package org.openmrs.module.patientflags.extension.html;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.openmrs.Patient;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.Extension;
 import org.openmrs.module.patientflags.Flag;
 import org.openmrs.module.patientflags.api.FlagService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FlagPatientDashboardHeaderExt extends Extension {
 	

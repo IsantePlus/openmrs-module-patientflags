@@ -17,7 +17,6 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.PatientFlagsProperties;
 import org.openmrs.module.patientflags.api.FlagService;
 import org.openmrs.module.patientflags.web.validators.PatientFlagsPropertiesValidator;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

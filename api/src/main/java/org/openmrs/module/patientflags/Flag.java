@@ -13,14 +13,14 @@
  */
 package org.openmrs.module.patientflags;
 
-import java.util.Set;
-
 import org.openmrs.BaseOpenmrsMetadata;
 import org.openmrs.Cohort;
 import org.openmrs.Patient;
 import org.openmrs.api.APIException;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.patientflags.evaluator.FlagEvaluator;
+
+import java.util.Set;
 
 /**
  * This class represents a row in the flag_flag table. It also provides a means to validate a flag,
